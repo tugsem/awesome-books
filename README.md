@@ -1,7 +1,7 @@
 
-# VillageFest
+# Awesome Books
 
-> A sample page I designed for a festival in the Adrasan Village.
+>A Simple page designed to study Javascript objects and object methods.
 
 
 ## Built With
@@ -13,11 +13,7 @@
 
 ## Live Demo 
 
-[Live Demo Link](https://tugsem.github.io/VillageFestival/)
-
-## Video Link 
-
-https://www.loom.com/share/ba730c5624894c28a927cd9e06b8cb58
+[Live Demo Link](https://tugsem.github.io/awesome-books/)
 
 ## Getting Started
 
@@ -37,7 +33,7 @@ To get a local copy up and running follow these simple example steps:
 
 ### Usage
 
--Change the text and the images.
+- Add title and author into the input fields to add new book to your collection. 
 
 ## Authors
 
@@ -47,12 +43,17 @@ To get a local copy up and running follow these simple example steps:
 - Twitter: [@twitterhandle](https://twitter.com/TugsemSaranli)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/tuğsem-saranlı-5b2a98230/?locale=en_US)
 
+👤 **Ugochukwu Omulu**
+
+- GitHub: [@githubhandle](https://github.com/Mikelobi)
+- Twitter: [@twitterhandle](https://twitter.com/omulum)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/ugochukwu-omulu-b9697663/)
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
 
-## Acknowledgments
 
-- Original design idea by Cindy Chin in Behance.
+
+
 
