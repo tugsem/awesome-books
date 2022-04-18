@@ -9,9 +9,14 @@ body {
   margin: 0 auto;
 }
 
-#form > label {
+#books-form {
   display: flex;
   flex-direction: column;
+  gap: 10px 0;
   margin: 10px 0;
+  width: fit-content;
+}
+
+.btn {
   width: fit-content;
 }
