@@ -9,11 +9,6 @@ body {
   margin: 0 auto;
 }
 
-.added-book {
-  padding: 10px 0;
-  border-bottom: 1px solid black;
-}
-
 #form > label {
   display: flex;
   flex-direction: column;
