@@ -58,7 +58,6 @@ const removeBook = (button) => {
     (book) => book.title !== myTitle && book.author !== myAuthor,
   );
   window.localStorage.setItem('bookShop', JSON.stringify(booksLeft));
-
   parentDiv.remove();
 };
 
