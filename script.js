@@ -20,13 +20,13 @@ function displayBooks() {
   }
   container.innerHTML = bookContainer;
 }
-
+/* eslint-disable no-unused-vars */
 function removeBook(index) {
   const newList = bookList.filter((_, i) => i !== index);
   storage.setItem('books', JSON.stringify(newList));
   window.onload = displayBooks();
 }
-
+/* eslint-enable no-unused-vars */
 function addBook() {
   const title = document.querySelector('#title');
   const author = document.querySelector('#author');
