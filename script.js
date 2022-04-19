@@ -29,7 +29,7 @@ function addBooks(title, author) {
 function editLocalStorage(index) {
   books = JSON.parse(localStorage.books);
   const data = books.filter((book) => book !== books[index]);
-  localStorage.setItem('books', JSON.stringify(data));
+  localStorage.setItem('bookWrack', JSON.stringify(data));
 }
 
 function removeBook(index) {
@@ -59,7 +59,7 @@ add.addEventListener('click', (e) => {
   if (title.value !== '' && author.value !== '') {
     e.preventDefault();
     addBooks(title.value, author.value);
-    localStorage.setItem('books', JSON.stringify(books));
+    localStorage.setItem('bookWrack', JSON.stringify(books));
     displayBooks(books);
     title.value = '';
     author.value = '';
