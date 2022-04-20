@@ -14,19 +14,22 @@ class Book {
 }
 
 const methods = {
-  
+
   add() {
     const book = new Book(titleInp.value, authorInp.value);
-
     bookCollection.push(book);
     storage.setItem('books', JSON.stringify(bookCollection));
-    container.innerHTML += `<div id="${book.id}">
-                          <p>${book.title}</p>
-                          <p>${book.author}</p>
-                          <button type="submit" class="rmvBtn">Remove</button>
-                          <hr />
-                        </div>`;
-
+    container.innerHTML += `
+    <div class="single-book" id="${book.id}">
+      <div class="bio">
+          <h3>${book.title}</h3>
+          <span>by<span>
+          <h3>${book.author}</h3>
+      </div>
+      <button type="submit" class="rmvBtn">Remove</button>
+      <hr />
+    </div>`;
+    container.className = 'List';
     titleInp.value = '';
     authorInp.value = '';
   },
@@ -35,14 +38,19 @@ const methods = {
     bookCollection = JSON.parse(storage.getItem('books')) || [];
     let bookContainer = '';
     bookCollection.forEach((book) => {
-      bookContainer += `<div id="${book.id}">
-                          <p>${book.title}</p>
-                          <p>${book.author}</p>
-                          <button type="submit" class="rmvBtn">Remove</button>
-                          <hr />
-                        </div>`;
+      bookContainer += `
+      <div class="single-book" id="${book.id}">
+        <div class="bio">
+            <h3>${book.title}</h3>
+            <span>by<span>
+            <h3>${book.author}</h3>
+        </div>
+        <button type="submit" class="rmvBtn">Remove</button>
+        <hr />
+    </div>`;
     });
     container.innerHTML = bookContainer;
+    container.className = 'List';
   },
 
   remove(id) {
