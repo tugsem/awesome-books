@@ -22,14 +22,18 @@ class Book {
     this.bookList = JSON.parse(storage.getItem('books'));
     let bookContainer = '';
     for (let i = 0; i < this.bookList.length; i += 1) {
-      bookContainer += `<div>
-                          <p>${this.bookList[i].title}</p>
-                          <p>${this.bookList[i].author}</p>
+      bookContainer += `
+                        <div class="single-book">
+                          <div class="bio">
+                            <h3>${this.bookList[i].title}</h3>
+                            <span>by</span>
+                            <h3>${this.bookList[i].author}</h3>
+                          </div>
                           <button type="submit" class="rmvBtn" onclick="remove(${i})">Remove</button>
-                          <hr />
                         </div>`;
     }
     container.innerHTML = bookContainer;
+    container.className = 'List';
   }
 
   removeBook(index) {
