@@ -76,6 +76,7 @@ body {
 .title-form,
 .title-contact {
   margin-bottom: 50px;
+  font-size: 2rem;
 }
 
 #add {
@@ -86,7 +87,6 @@ body {
   border-right: 4px solid #000;
   border-bottom: 4px solid #000;
 }
-
 
 #add,
 .rmvBtn {
@@ -117,9 +117,10 @@ body {
   margin: 0 10px;
   margin-bottom: 10px;
   width: 98%;
-  padding: 10px 0; 
+  padding: 10px 0;
   padding-left: 10px;
 }
+
 header {
   display: flex;
   justify-content: space-between;
@@ -132,32 +133,40 @@ header {
   list-style-type: none;
   display: flex;
 }
+
 #nav-title {
   font-size: 1.3rem;
 }
+
 nav > ul > li > a {
   text-decoration: none;
   color: #000;
   font-weight: 700;
   font-size: 1.3rem;
   border-right: 2px solid black;
-  padding:0 10px ;
+  padding: 0 10px;
 }
 
- ul > li:last-child > a{
+ul > li:last-child > a {
   border-right: none;
 }
 
 #date {
-display: flex;
-justify-content: flex-end;
-margin-right: 20px;
-font-weight: 700;
-}
-.add-books {
-  display: none;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
+  font-weight: 700;
 }
 
 .contSection {
   display: none;
+  flex-direction: column;
+  font-weight: 900;
+  align-items: center;
+  margin-top: 100px;
+  font-size: larger;
+}
+
+#cont-list {
+  margin: 30px;
 }

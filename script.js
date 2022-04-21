@@ -13,7 +13,6 @@ const authorInp = document.querySelector('#author');
 let bookCollection = JSON.parse(storage.getItem('books') || []);
 
 document.addEventListener('click', (e) => {
-  console.log(e.target);
   if (e.target.id === 'listLink') {
     booksContainer.style.display = 'flex';
     contSection.style.display = 'none';
