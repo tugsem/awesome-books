@@ -1,3 +1,5 @@
+import luxon from './date_app.js';
+
 const form = document.querySelector('#form');
 const container = document.querySelector('.container');
 const storage = window.localStorage;
@@ -63,6 +65,10 @@ const methods = {
     this.display();
   },
 };
+
+const date = document.querySelector('#date');
+const dateTime = luxon.DateTime.utc().toLocaleString(luxon.DateTime.DATETIME_FULL);
+date.textContent = dateTime;
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
