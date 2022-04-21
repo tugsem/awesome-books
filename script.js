@@ -1,42 +1,80 @@
 const form = document.querySelector('#form');
 const container = document.querySelector('.container');
 const storage = window.localStorage;
+const titleInp = document.querySelector('#title');
+const authorInp = document.querySelector('#author');
+let bookCollection = JSON.parse(storage.getItem('books') || []);
 
-let bookList = [];
-
-function displayBooks() {
-  const books = JSON.parse(storage.getItem('books'));
-  if (books != null) {
-    bookList = books;
+class Book {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+    this.id = Date.now();
   }
-  let bookContainer = '';
-  for (let i = 0; i < bookList.length; i += 1) {
-    bookContainer += `<div>
-                    <p>${bookList[i].title}</p>
-                    <p>${bookList[i].author}</p>
-                    <button type="submit" class="rmvBtn" onclick="removeBook(${i})">Remove</button>
-                    <hr />
-                  </div>`;
+}
+
+const methods = {
+
+  add() {
+    const book = new Book(titleInp.value, authorInp.value);
+    bookCollection.push(book);
+    storage.setItem('books', JSON.stringify(bookCollection));
+    container.innerHTML += `
+    <div class="single-book" id="${book.id}">
+      <div class="bio">
+          <h3 class="uppercase" >"${book.title}"</h3>
+          <h3>by<h3>
+          <h3 class="uppercase">${book.author}</h3>
+      </div>
+      <button type="submit" class="rmvBtn">Remove</button>
+    </div>`;
+    container.className = 'List';
+    titleInp.value = '';
+    authorInp.value = '';
+  },
+
+  display() {
+    bookCollection = JSON.parse(storage.getItem('books')) || [];
+    let bookContainer = '';
+    bookCollection.forEach((book) => {
+      bookContainer += `
+      <div class="single-book" id="${book.id}">
+        <div class="bio">
+            <h3 class="uppercase" >"${book.title}"</h3>
+            <h3>by<h3>
+            <h3 class="uppercase">${book.author}</h3>
+        </div>
+        <button type="submit" class="rmvBtn">Remove</button>
+    </div>`;
+    });
+    container.innerHTML = bookContainer;
+    container.className = 'List';
+  },
+
+  remove(id) {
+    bookCollection = JSON.parse(storage.getItem('books'));
+    bookCollection.forEach((book) => {
+      if(book.id == id ) { //eslint-disable-line
+        const index = bookCollection.indexOf(book);
+        bookCollection.splice(index, 1);
+      }
+    });
+    storage.setItem('books', JSON.stringify(bookCollection));
+    this.display();
+  },
+};
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  methods.add();
+});
+
+container.addEventListener('click', (e) => {
+  if(e.target.className == "rmvBtn") {  //eslint-disable-line
+    const element = e.target.parentNode;
+    element.remove();
+    methods.remove(element.id);
   }
-  container.innerHTML = bookContainer;
-}
-/* eslint-disable no-unused-vars */
-function removeBook(index) {
-  const newList = bookList.filter((_, i) => i !== index);
-  storage.setItem('books', JSON.stringify(newList));
-  window.onload = displayBooks();
-}
-/* eslint-enable no-unused-vars */
-function addBook() {
-  const title = document.querySelector('#title');
-  const author = document.querySelector('#author');
-  bookList.push({ title: title.value, author: author.value });
-  storage.setItem('books', JSON.stringify(bookList));
-  displayBooks();
-  title.value = '';
-  author.value = '';
-}
+});
 
-form.addEventListener('submit', addBook);
-
-window.onload = displayBooks();
+window.onload = methods.display();
