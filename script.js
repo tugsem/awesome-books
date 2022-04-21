@@ -1,50 +1,32 @@
 import luxon from './date_app.js';
 
-const list = document.querySelector('#list');
-const addNew = document.querySelector('#add-new');
-const contact = document.querySelector('#contact');
 const booksContainer = document.querySelector('.books-container');
 const contSection = document.querySelector('.contSection');
 const formSection = document.querySelector('.add-books');
 
-const form = document.querySelector('#form');
+const form = document.querySelector('.form');
 const container = document.querySelector('.container');
 const storage = window.localStorage;
 const titleInp = document.querySelector('#title');
 const authorInp = document.querySelector('#author');
 let bookCollection = JSON.parse(storage.getItem('books') || []);
 
-list.addEventListener('click', () => {
-  
-  if(booksContainer.className.includes == "remove"){
-    booksContainer.classList.remove('remove');
+document.addEventListener('click', (e) => {
+  console.log(e.target);
+  if (e.target.id === 'listLink') {
+    booksContainer.style.display = 'flex';
+    contSection.style.display = 'none';
+    formSection.style.display = 'none';
+  } else if (e.target.id === 'formLink') {
+    formSection.style.display = 'flex';
+    contSection.style.display = 'none';
+    booksContainer.style.display = 'none';
+  } else if (e.target.id === 'contactLink') {
+    formSection.style.display = 'none';
+    contSection.style.display = 'flex';
+    booksContainer.style.display = 'none';
   }
-  if(formSection.classList.includes !== "remove" && contSection.classList.includes !== "remove" ) {
-    formSection.classList.add('remove');
-    contSection.classList.add('remove');
-  }
-  console.log(contSection.className)
-})
-
-addNew.addEventListener('click', () => {
-  if(formSection.className.includes == "remove"){
-    formSection.classList.remove('remove');
-  }
-  if(booksContainer.classList.includes !== "remove" && contSection.classList.includes !== "remove") {
-    booksContainer.classList.add('remove');
-    contSection.classList.add('remove');
-  }
-})
-
-contact.addEventListener('click', () => {
-  if(contSection.className.includes == "remove"){
-    contSection.classList.remove('remove');
-  }
-  if(booksContainer.classList.includes && formSection.classList.includes !== "remove") {
-    booksContainer.classList.add('remove');
-    formSection.classList.add('remove');
-  }
-})
+});
 
 class Book {
   constructor(title, author) {
@@ -123,3 +105,4 @@ container.addEventListener('click', (e) => {
 });
 
 window.onload = methods.display();
+window.onload = () => { formSection.style.display = 'none'; };

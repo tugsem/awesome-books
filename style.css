@@ -152,7 +152,10 @@ justify-content: flex-end;
 margin-right: 20px;
 font-weight: 700;
 }
+.add-books {
+  display: none;
+}
 
-.remove {
+.contSection {
   display: none;
 }
