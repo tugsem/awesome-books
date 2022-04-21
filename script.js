@@ -22,9 +22,9 @@ const methods = {
     container.innerHTML += `
     <div class="single-book" id="${book.id}">
       <div class="bio">
-          <h3>"${book.title}"</h3>
+          <h3 class="uppercase" >"${book.title}"</h3>
           <h3>by<h3>
-          <h3>${book.author}</h3>
+          <h3 class="uppercase">${book.author}</h3>
       </div>
       <button type="submit" class="rmvBtn">Remove</button>
     </div>`;
@@ -40,9 +40,9 @@ const methods = {
       bookContainer += `
       <div class="single-book" id="${book.id}">
         <div class="bio">
-            <h3>"${book.title}"</h3>
+            <h3 class="uppercase" >"${book.title}"</h3>
             <h3>by<h3>
-            <h3>${book.author}</h3>
+            <h3 class="uppercase">${book.author}</h3>
         </div>
         <button type="submit" class="rmvBtn">Remove</button>
     </div>`;

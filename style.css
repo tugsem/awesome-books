@@ -95,3 +95,7 @@ main {
 .title {
   font-weight: 700;
 }
+
+.uppercase {
+  text-transform: capitalize;
+}
