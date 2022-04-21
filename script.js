@@ -22,12 +22,11 @@ const methods = {
     container.innerHTML += `
     <div class="single-book" id="${book.id}">
       <div class="bio">
-          <h3>${book.title}</h3>
-          <span>by<span>
+          <h3>"${book.title}"</h3>
+          <h3>by<h3>
           <h3>${book.author}</h3>
       </div>
       <button type="submit" class="rmvBtn">Remove</button>
-      <hr />
     </div>`;
     container.className = 'List';
     titleInp.value = '';
@@ -41,12 +40,11 @@ const methods = {
       bookContainer += `
       <div class="single-book" id="${book.id}">
         <div class="bio">
-            <h3>${book.title}</h3>
-            <span>by<span>
+            <h3>"${book.title}"</h3>
+            <h3>by<h3>
             <h3>${book.author}</h3>
         </div>
         <button type="submit" class="rmvBtn">Remove</button>
-        <hr />
     </div>`;
     });
     container.innerHTML = bookContainer;
