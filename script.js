@@ -1,5 +1,6 @@
 import luxon from './date_app.js';
 
+const inpFields = document.querySelectorAll('.inp');
 const booksContainer = document.querySelector('.books-container');
 const contSection = document.querySelector('.contSection');
 const formSection = document.querySelector('.add-books');
@@ -102,6 +103,12 @@ container.addEventListener('click', (e) => {
     element.remove();
     methods.remove(element.id);
   }
+});
+
+inpFields.forEach((inp) => {
+  inp.onclick = () => {
+    inp.value = '';
+  };
 });
 
 window.onload = methods.display();
