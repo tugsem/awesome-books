@@ -8,20 +8,48 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main>
-      <section class="books-container">
+  <header>
+    <h1 id="nav-title">Awesome Books</h1>
+    <nav>
+      <ul id="nav-list">
+        <li><a href="#list" id="listLink">List</a></li>
+        <li><a href="#form" id="formLink">Add new</a></li>
+        <li><a href="#contact" id="contactLink">Contact</a></li>
+      </ul>
+    </nav>  
+  </header>
+  <p id="date"></p>
+      <section class="books-container" id="list">
         <h1 class="title">All awesome books</h1>
         <div class="container"></div>
       </section>
-      <section class="add-books">
-        <h1 class="title">Add a new book</h1>
-        <form id="form">
-          <input type="text" id="title" placeholder="title" required />          
-          <input type="text" id="author" placeholder="author" required />          
+
+      <section class="add-books" id="form">
+        <h1 class="title-form">Add a new book</h1>
+        <form class="form">
+          <input type="text" id="title" placeholder="" value="Title" class="inp" required />          
+          <input type="text" id="author" placeholder="" value="Author" class="inp" required />          
           <button type="submit" id="add">Add</button> 
         </form>
       </section>  
-    </main>
-    <script src="script.js"></script>
+
+      <section class="contSection" id="contact">
+        <h1 class="title-contact">Contact information</h1>
+        <p>Do have any questions or you just want to say "Hello"? <br>
+        You can reach out to us!</p>
+        <ul id="cont-list">
+          <li>Our e-mail: mail@mail.com</li>
+          <li>Our phone number: 004546947009</li>
+          <li>Our address: Streetname 22, 84503 City, Country</li>
+        </ul>
+      </section>
+
+    <footer>
+      <div id="Cr">
+         <p>Copyright</p>
+      </div>
+    </footer>
+    <script type="module" src="script.js"></script>
+    <script type="module" src="date_app.js"></script>
 </body>
 </html>
