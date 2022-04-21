@@ -67,7 +67,8 @@ main {
 
 #form input {
   border: 1px solid black;
-  height: 20px;
+  height: 40px;
+  width: 100%;
 }
 
 #form button {
@@ -150,4 +151,8 @@ display: flex;
 justify-content: flex-end;
 margin-right: 20px;
 font-weight: 700;
+}
+
+.remove {
+  display: none;
 }

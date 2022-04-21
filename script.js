@@ -3,6 +3,9 @@ import luxon from './date_app.js';
 const list = document.querySelector('#list');
 const addNew = document.querySelector('#add-new');
 const contact = document.querySelector('#contact');
+const booksContainer = document.querySelector('.books-container');
+const contSection = document.querySelector('.contSection');
+const formSection = document.querySelector('.add-books');
 
 const form = document.querySelector('#form');
 const container = document.querySelector('.container');
@@ -13,9 +16,35 @@ let bookCollection = JSON.parse(storage.getItem('books') || []);
 
 list.addEventListener('click', () => {
   
+  if(booksContainer.className.includes == "remove"){
+    booksContainer.classList.remove('remove');
+  }
+  if(formSection.classList.includes !== "remove" && contSection.classList.includes !== "remove" ) {
+    formSection.classList.add('remove');
+    contSection.classList.add('remove');
+  }
+  console.log(contSection.className)
 })
 
+addNew.addEventListener('click', () => {
+  if(formSection.className.includes == "remove"){
+    formSection.classList.remove('remove');
+  }
+  if(booksContainer.classList.includes !== "remove" && contSection.classList.includes !== "remove") {
+    booksContainer.classList.add('remove');
+    contSection.classList.add('remove');
+  }
+})
 
+contact.addEventListener('click', () => {
+  if(contSection.className.includes == "remove"){
+    contSection.classList.remove('remove');
+  }
+  if(booksContainer.classList.includes && formSection.classList.includes !== "remove") {
+    booksContainer.classList.add('remove');
+    formSection.classList.add('remove');
+  }
+})
 
 class Book {
   constructor(title, author) {
