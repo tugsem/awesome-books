@@ -11,20 +11,22 @@
   <header>
     <h1 id="nav-title">Awesome Books</h1>
     <nav>
-      <ul>
-        <li>List</li>
-        <li>Add new</li>
-        <li>Contact</li>
+      <ul id="nav-list">
+        <li><a href="#list" id="list">List</a></li>
+        <li><a href="#form" id="add-new">Add new</a></li>
+        <li><a href="#contact" id="contact">Contact</a></li>
       </ul>
     </nav>  
   </header>
   <p id="date"></p>
+
     <main>
-      <section class="books-container">
+      <section class="books-container" id="list">
         <h1 class="title">All awesome books</h1>
         <div class="container"></div>
       </section>
-      <section class="add-books">
+
+      <section class="add-books" id="form">
         <h1 class="title">Add a new book</h1>
         <form id="form">
           <input type="text" id="title" placeholder="title" required />          
@@ -32,7 +34,23 @@
           <button type="submit" id="add">Add</button> 
         </form>
       </section>  
+      <section id="contact">
+        <h1>Contact information</h1>
+        <p>Do have any questions or you just want to say "Hello"? <br>
+        You can reach out to us!</p>
+        <ul>
+          <li>Our e-mail: mail@mail.com</li>
+          <li>Our phone number: 004546947009</li>
+          <li>Our address: Streetname 22, 84503 City, Country</li>
+        </ul>
+      </section>
     </main>
+
+    <footer>
+      <div id="Cr">
+         <p>Copyright</p>
+      </div>
+    </footer>
     <script type="module" src="script.js"></script>
     <script type="module" src="date_app.js"></script>
 </body>

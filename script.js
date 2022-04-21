@@ -1,11 +1,21 @@
 import luxon from './date_app.js';
 
+const list = document.querySelector('#list');
+const addNew = document.querySelector('#add-new');
+const contact = document.querySelector('#contact');
+
 const form = document.querySelector('#form');
 const container = document.querySelector('.container');
 const storage = window.localStorage;
 const titleInp = document.querySelector('#title');
 const authorInp = document.querySelector('#author');
 let bookCollection = JSON.parse(storage.getItem('books') || []);
+
+list.addEventListener('click', () => {
+  
+})
+
+
 
 class Book {
   constructor(title, author) {
