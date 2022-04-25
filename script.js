@@ -10,7 +10,7 @@ const container = document.querySelector('.container');
 const storage = window.localStorage;
 const titleInp = document.querySelector('#title');
 const authorInp = document.querySelector('#author');
-let bookCollection = JSON.parse(storage.getItem('books') || []);
+let bookCollection = JSON.parse(storage.getItem('books')) || [];
 
 document.addEventListener('click', (e) => {
   if (e.target.id === 'listLink') {
